@@ -9,16 +9,20 @@ export AIRFLOW_HOME=$PWD & airflow schedular
 
 ## 安装
 
-    sudo pip install airflow
-    airflow db init
-    airflow users create \
-        --username admin \
-        --firstname Peter \
-        --lastname Parker \
-        --role Admin \
-        --email spiderman@superhero.org
-    airflow webserver --port 8080
-    airflow scheduler
+```bash
+pip install apache-airflow
+pip install 'flask-session<0.6'
+pip3 install apache-airflow-providers-ssh
+airflow db migrate
+airflow users create \
+    --username admin \
+    --firstname Peter \
+    --lastname Parker \
+    --role Admin \
+    --email spiderman@superhero.org
+airflow webserver --port 8080
+airflow scheduler
+```
 
 
 ## [装饰器](./dags/装饰器.md)
@@ -82,3 +86,13 @@ TriggerDagRunOperator(
 
 
 [trigger-dag-run-operator]: https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/operators/trigger_dagrun/index.html#airflow.operators.trigger_dagrun.TriggerDagRunOperator
+
+## 设置数据库
+```
+CREATE DATABASE airflow_db;
+CREATE USER airflow_user WITH PASSWORD 'airflow_pass';
+GRANT ALL PRIVILEGES ON DATABASE airflow_db TO airflow_user;
+-- PostgreSQL 15 requires additional privileges:
+USE airflow_db;
+GRANT ALL ON SCHEMA public TO airflow_user;
+```
