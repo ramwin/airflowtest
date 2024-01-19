@@ -96,3 +96,7 @@ GRANT ALL PRIVILEGES ON DATABASE airflow_db TO airflow_user;
 USE airflow_db;
 GRANT ALL ON SCHEMA public TO airflow_user;
 ```
+
+## 配置
+* [dag_dir_list_interval](https://airflow.apache.org/docs/apache-airflow/2.8.1/configurations-ref.html#dag-dir-list-interval)
+多少秒刷新一次

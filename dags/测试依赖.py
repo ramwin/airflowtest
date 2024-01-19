@@ -23,7 +23,7 @@ with DAG(
     "test_error_true",
     start_date=pendulum.now()-datetime.timedelta(minutes=5),
     tags=["test"],
-    max_active_runs=1,
+    max_active_runs=4,
     schedule_interval="* * * * *",
 ) as dag:
     bash1 = BashOperator(
