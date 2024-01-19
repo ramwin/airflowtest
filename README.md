@@ -1,6 +1,12 @@
 # aitflowtest
 * 不支持循环，只支持单向
 
+## 测试
+```
+export AIRFLOW_HOME=$PWD & airflow webserver
+export AIRFLOW_HOME=$PWD & airflow schedular
+```
+
 ## 安装
 
     sudo pip install airflow
