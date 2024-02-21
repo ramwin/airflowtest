@@ -11,6 +11,8 @@ export AIRFLOW_HOME=$PWD & airflow schedular
 ## 安装
 
 ```bash
+git clone git@github.com:ramwin/airflowtest.git airflow
+cd airflow
 pip install apache-airflow
 pip install 'flask-session<0.6'
 pip3 install apache-airflow-providers-ssh
