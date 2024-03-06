@@ -108,3 +108,7 @@ GRANT ALL ON SCHEMA public TO airflow_user;
 ## 配置
 * [dag_dir_list_interval](https://airflow.apache.org/docs/apache-airflow/2.8.1/configurations-ref.html#dag-dir-list-interval)
 多少秒刷新一次
+
+## Xcoms
+用来给几个任务之间传递少量数据。[示例: ./dags/python_push_bash_pull.py](./dags/python_push_bash_pull.py)
+xcom_push的时候, 如果传了task_ids, 就只能拿到这个task_ids传的数据，否则会拿到最新的push的数据
