@@ -3,3 +3,5 @@ flask-appbuilder==4.3.10
 psutil
 psycopg2-binary
 Flask-Session2
+apache-airflow-providers-ssh
+virtualenv
