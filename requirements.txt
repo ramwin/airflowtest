@@ -2,3 +2,4 @@ apache-airflow==2.8.1
 flask-appbuilder==4.3.10
 psutil
 psycopg2-binary
+Flask-Session2

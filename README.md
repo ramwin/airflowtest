@@ -32,6 +32,12 @@ airflow scheduler
     1. `deploy/airflow.ramwin.com`
 2. 复制 `deploy/airflow.yourdomain.com` 到 `/etc/nginx/sites-enabled/` 文件夹
 3. 复制 `deploy/supervisor.conf` 到 `/etc/supervisor/conf.d/airflow.conf`
+4. 更新supervisor
+```
+sudo supervisorctl reread
+sudo supervisorctl update airflow_webserver
+sudo supervisorctl start airflow_webserver
+```
 
 
 ## [装饰器](./dags/装饰器.md)
