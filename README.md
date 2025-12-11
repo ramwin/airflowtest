@@ -43,6 +43,11 @@ sudo supervisorctl start airflow_webserver
 ## [装饰器](./dags/装饰器.md)
 
 ## DAG
+* 更新airflow dags
+```
+airflow dags reserialize
+```
+
 ```
 import pendulum
 from airflow import DAG
